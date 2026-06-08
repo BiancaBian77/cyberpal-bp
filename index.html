@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>赛博伙伴 CyberPal · 商业计划书</title>
+<style>
+:root{--bg:#fff;--text:#111;--text2:#444;--text3:#888;--gold:#b8860b;--blue:#3b6fb6;--green:#2d8a56;--red:#c0392b;--accent:#111}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Serif SC',Georgia,serif;background:var(--bg);color:var(--text);line-height:1.9;max-width:800px;margin:0 auto;padding:3rem 2rem}
+
+/* Cover */
+.cover{text-align:center;padding:3rem 0 2rem;border-bottom:1px solid #e5e7ec;margin-bottom:3rem}
+.cover h1{font-size:2.2rem;font-weight:900;letter-spacing:-1px;margin-bottom:.3rem}
+.cover h1 em{font-style:normal;color:var(--gold)}
+.cover .oneliner{font-size:1.2rem;font-weight:700;color:var(--text2);margin:1.5rem 0;line-height:1.6}
+.cover .meta{color:var(--text3);font-size:.78rem;margin-top:1.5rem}
+
+/* Sections */
+h2{font-size:1.05rem;font-weight:800;margin:3rem 0 1rem;padding-bottom:.4rem;border-bottom:2px solid #111;letter-spacing:-.5px}
+h3{font-size:.9rem;font-weight:700;margin:1.8rem 0 .6rem;color:var(--text)}
+p{font-size:.85rem;color:var(--text2);margin:.5rem 0;text-align:justify}
+.lead{font-size:.95rem;color:var(--text);line-height:1.9}
+
+/* Executive Summary Box */
+.exec-summary{background:#fafafa;border:1px solid #e5e7ec;border-radius:12px;padding:2rem;margin:2rem 0}
+.exec-summary h3{font-size:.85rem;margin-top:0;margin-bottom:1rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase}
+
+/* Canvas & Tables */
+table{width:100%;border-collapse:collapse;font-size:.8rem;margin:1rem 0}
+thead th{background:#111;color:#fff;font-weight:600;padding:.5rem .8rem;text-align:left;font-size:.68rem;letter-spacing:.5px}
+tbody td{padding:.45rem .8rem;border-bottom:1px solid #e5e7ec;vertical-align:top}
+tbody tr:nth-child(even){background:#fafafa}
+.green{color:var(--green);font-weight:600}
+.red{color:var(--red);font-weight:600}
+
+/* Canvas Grid */
+.canvas-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e5e7ec;border-radius:12px;overflow:hidden;margin:1.5rem 0}
+.canvas-cell{background:#fff;padding:1.2rem}
+.canvas-cell:nth-child(odd){background:#fafafa}
+.canvas-cell h4{font-size:.72rem;color:var(--gold);margin-bottom:.3rem;letter-spacing:1px;text-transform:uppercase}
+.canvas-cell p{font-size:.76rem;color:var(--text2);margin:0;line-height:1.6}
+
+/* KPI */
+.kpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.6rem;margin:1rem 0}
+.kpi{background:#fafafa;border-radius:8px;padding:.8rem;text-align:center}
+.kpi .v{font-size:1.3rem;font-weight:900;color:var(--gold)}
+.kpi .l{font-size:.62rem;color:var(--text3);margin-top:.1rem}
+
+/* Milestone timeline */
+.timeline{position:relative;margin:1rem 0 1rem 1rem;border-left:2px solid #e5e7ec;padding-left:1.5rem}
+.timeline-item{margin-bottom:1rem;position:relative}
+.timeline-item::before{content:'';position:absolute;left:-1.6rem;top:.4rem;width:10px;height:10px;border-radius:50%;background:var(--gold)}
+.timeline-item h4{font-size:.8rem;font-weight:700;margin-bottom:.1rem}
+.timeline-item p{font-size:.76rem;color:var(--text2);margin:0}
+
+/* Callout */
+.callout{background:#fef9e7;border-left:4px solid var(--gold);padding:.8rem 1rem;margin:1rem 0;font-size:.78rem;color:var(--text2)}
+.callout strong{color:var(--gold)}
+
+/* Footer */
+hr.rule{width:40px;height:3px;background:var(--gold);margin:2rem auto;border:none}
+.end{text-align:center;color:var(--text3);font-size:.78rem;margin:2rem 0}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1rem 0}
+@media(max-width:600px){.two-col{grid-template-columns:1fr}.canvas-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- ═══ COVER ═══ -->
+<div class="cover">
+  <p style="font-size:.7rem;color:var(--text3);letter-spacing:2px;margin-bottom:1.5rem">清华科创杯 · 商业计划书</p>
+  <h1>「赛博伙伴」</h1>
+  <div class="oneliner">
+    每个孩子的童年，都值得拥有一个<br>
+    会叫他的名字、会跟他散步、会听他说话的 AI 伙伴——赛博伙伴 CyberPal。<br>
+    我们用 5 天，让孩子从零件开始，亲手创造它。
+  </div>
+  <p class="meta">2026 年 6 月 · 种子轮 · 北京</p>
+</div>
+
+<!-- ═══ EXECUTIVE SUMMARY ═══ -->
+<div class="exec-summary">
+  <h3>执行摘要</h3>
+  <p class="lead"><strong>「赛博伙伴 CyberPal」</strong>是中国首个面向 8-12 岁小学生的 AI 启蒙教育品牌。学员在 5 天内从伺服电机和电路板开始亲手组装全球领先的开源四足机器人 Petoi Bittle，完成运动控制编程、传感器接入和大模型语音交互学习——最终将一只具备「行走、对话、识别」能力的 AI 机器狗带回家。</p>
+  <p style="font-size:.8rem;color:var(--text2);margin-top:.8rem">
+    现有机器人教育停留在乐高搭建或遥控车级别。我们填补的是「硬件从零组装 × 大模型 AI 交互 × 完整作品带回家」的市场空白。首年聚焦北京，单期 30 人，客单价 ¥29,800，毛利率 80%，年营收目标 ¥400 万。通过启蒙营→进阶营→竞赛营→助教的四阶梯 LTV 模型，单学员生命周期价值可达 ¥78,000。种子轮融资 ¥200 万，出让 15%，用于北京市场验证。
+  </p>
+</div>
+
+<!-- ═══ 一、公司概述 ═══ -->
+<h2>一、公司概述</h2>
+
+<div class="two-col">
+  <div>
+    <h3>基本信息</h3>
+    <table>
+      <tr><td style="color:var(--text3);width:80px">公司名称</td><td>赛博伙伴（拟注册）</td></tr>
+      <tr><td style="color:var(--text3)">总部</td><td>北京</td></tr>
+      <tr><td style="color:var(--text3)">成立时间</td><td>2026 年（筹）</td></tr>
+      <tr><td style="color:var(--text3)">阶段</td><td>种子轮</td></tr>
+      <tr><td style="color:var(--text3)">行业</td><td>AI 教育 / 素质教育</td></tr>
+    </table>
+  </div>
+  <div>
+    <h3>融资概要</h3>
+    <table>
+      <tr><td style="color:var(--text3);width:80px">融资轮次</td><td class="green">种子轮</td></tr>
+      <tr><td style="color:var(--text3)">融资金额</td><td class="green">¥200 万</td></tr>
+      <tr><td style="color:var(--text3)">出让股权</td><td>15%</td></tr>
+      <tr><td style="color:var(--text3)">Runway</td><td>18 个月</td></tr>
+      <tr><td style="color:var(--text3)">投前估值</td><td>¥1,133 万</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══ 二、问题与机会 ═══ -->
+<h2>二、问题与市场机会</h2>
+
+<h3>2.1 核心问题</h3>
+<p>中国有超过 2 亿 K12 学生，但机器人教育市场存在三个结构性缺陷：</p>
+<ol style="padding-left:1.5rem;font-size:.85rem;color:var(--text2);margin:.6rem 0">
+  <li><strong>平台同质化：</strong>90% 以上的机构使用乐高、鲸鱼等轮式教具——家长花了钱，孩子带回家的体验和 5 年前没有任何区别。</li>
+  <li><strong>AI 表面化：</strong>所谓的「AI 课程」大多是遥控车加了个语音模块——没有真正的多模态交互，没有大模型，没有「智能感」。</li>
+  <li><strong>作品不完整：</strong>课堂作品留在教室，结营后孩子没有可以持续探索和展示的成果物。</li>
+</ol>
+
+<h3>2.2 市场时机</h3>
+<p>三个趋势在这个时间点交汇，创造了品类定义的窗口：</p>
+<div class="two-col">
+  <div style="background:#fafafa;border-radius:8px;padding:1rem">
+    <h4 style="font-size:.74rem;margin:0 0 .3rem;color:var(--gold)">🤖 硬件成熟</h4>
+    <p style="font-size:.74rem;margin:0">Petoi Bittle 是全球首个达到消费级品质的开源四足平台——BBC 4.5/5 星，全球销售过万，中国有完整支持生态。硬件不再是不确定因素。</p>
+  </div>
+  <div style="background:#fafafa;border-radius:8px;padding:1rem">
+    <h4 style="font-size:.74rem;margin:0 0 .3rem;color:var(--gold)">🧠 AI 平民化</h4>
+    <p style="font-size:.74rem;margin:0">通义千问、DeepSeek 等国产大模型 API 成本急剧下降，语音交互、视觉识别等能力从「实验室」进入「消费级教育产品」。</p>
+  </div>
+  <div style="background:#fafafa;border-radius:8px;padding:1rem">
+    <h4 style="font-size:.74rem;margin:0 0 .3rem;color:var(--gold)">👨‍👩‍👧 需求升级</h4>
+    <p style="font-size:.74rem;margin:0">高净值家庭对「稀缺教育体验」的付费意愿空前——家长要的不再是「补课」，而是「我的孩子拥有了别人没有的经历和能力」。</p>
+  </div>
+  <div style="background:#fafafa;border-radius:8px;padding:1rem">
+    <h4 style="font-size:.74rem;margin:0 0 .3rem;color:var(--gold)">🏫 品类空白</h4>
+    <p style="font-size:.74rem;margin:0">北京市场上尚无「Bittle + 大模型 + 从零组装」的小学生深度营。「AI 启蒙」这个教育品类还没有被任何品牌占据。</p>
+  </div>
+</div>
+
+<h3>2.3 可服务市场（TAM）</h3>
+<table>
+  <tr><th>城市</th><th>适龄儿童</th><th>高净值≥2%</th><th>科技兴趣(20%)</th><th>价格接受(50%)</th><th>TAM</th></tr>
+  <tr><td>北京</td><td>~80万</td><td>1.6万</td><td>3,200</td><td>1,600</td><td class="green">~3,800人</td></tr>
+  <tr><td>上海+深圳+广州+杭州+成都</td><td>~235万</td><td>4.7万</td><td>9,400</td><td>4,700</td><td class="green">~11,100人</td></tr>
+  <tr style="background:#fef9e7"><td><strong>核心 TAM 合计</strong></td><td colspan="3"></td><td></td><td class="green"><strong>~14,900人</strong></td></tr>
+</table>
+<p style="font-size:.72rem;color:var(--text3)">TAM ≈ 14,900 人 × 客单价 ¥29,800 ≈ <strong>¥4.4 亿</strong>。含进阶产品 LTV ≈ <strong>¥11.6 亿</strong>。</p>
+
+<!-- ═══ 三、产品 ═══ -->
+<h2>三、产品与服务</h2>
+
+<h3>3.1 核心产品：5 天 AI 启蒙营</h3>
+<table>
+  <tr><th>天数</th><th>主题</th><th>核心内容</th><th>学习产出</th></tr>
+  <tr><td>Day 1</td><td><strong>造物日</strong></td><td>认识 Bittle 结构，从伺服电机和 NyBoard 主板开始组装</td><td>一台完整组装的四足机器人</td></tr>
+  <tr><td>Day 2</td><td><strong>运动日</strong></td><td>Arduino IDE 编程，控制步态、平衡、避障</td><td>机器人能走、能跳、能翻越障碍</td></tr>
+  <tr><td>Day 3</td><td><strong>感官日</strong></td><td>接入摄像头、麦克风、红外等传感器模块</td><td>机器人学会「看」和「听」</td></tr>
+  <tr><td>Day 4</td><td><strong>对话日</strong></td><td>接入大模型 API（Qwen/DeepSeek），训练专属语音人格</td><td>机器人叫出孩子的名字并自然对话</td></tr>
+  <tr><td>Day 5</td><td><strong>发布日</strong></td><td>「创伴发布会」——向家长演示作品，纪录片拍摄</td><td>作品展示 + 纪录片 + 结营证书</td></tr>
+</table>
+
+<h3>3.2 硬件平台</h3>
+<p><strong>Petoi Bittle</strong> —— 全球首个掌上伺服四足机器人。9 自由度、Arduino/Python 编程、完全开源。BBC Science Focus 4.5/5 星，全球销售超 10,000 台。中国有完整生态：淘宝店、B 站教程、QQ 社群、中文文档。</p>
+
+<div class="callout">
+  <strong>🎯 为什么不做自主硬件？</strong> 创业公司的资源有限。Bittle 已经解决了硬件可靠性、供应链和社区生态三个最难的问题。我们的增值层在课程体系、定制固件、AI 人格模型和品牌体验——这些才是家长自己在家做不到的。
+</div>
+
+<h3>3.3 成长体系：从「一次性体验」到「持续 LTV」</h3>
+<table>
+  <tr><th>阶段</th><th>产品</th><th>时长</th><th>定价</th><th>核心价值</th></tr>
+  <tr><td style="background:#fef9e7"><strong>Step 1</strong></td><td>🦮 <strong>启蒙营</strong>（核心产品）</td><td>5 天</td><td class="green">¥29,800</td><td>组装+编程+AI 对话，机器狗带回家</td></tr>
+  <tr><td style="background:#fef9e7"><strong>Step 2</strong></td><td>🧠 <strong>进阶营</strong></td><td>5 天</td><td class="green">¥19,800</td><td>树莓派+视觉识别+自主导航+专属人格训练</td></tr>
+  <tr><td style="background:#fef9e7"><strong>Step 3</strong></td><td>🏆 <strong>竞赛营</strong></td><td>8 周</td><td class="green">¥25,000</td><td>组队完成赛题，导师带队参赛，白名单赛事对接</td></tr>
+  <tr><td style="background:#fef9e7"><strong>Step 4</strong></td><td>🎓 <strong>助教/社区 KOL</strong></td><td>持续</td><td>免费/补贴</td><td>成为下期营小导师，社区生态自循环</td></tr>
+</table>
+<p>全路径 LTV = 29,800 + 19,800 + 25,000 + 社群年费(2年×800) + 硬件升级包(2,000) ≈ <strong class="green">¥78,000</strong>。</p>
+
+<!-- ═══ 四、商业模式 ═══ -->
+<h2>四、商业模式</h2>
+
+<h3>4.1 Business Model Canvas</h3>
+<div class="canvas-grid">
+  <div class="canvas-cell"><h4>1. 客户细分</h4><p>Tier 1: 北京高净值小学生家庭（年收入150万+）<br>Tier 2: 一线城市科技从业者家庭<br>Tier 3: 海外华人家庭（Y3扩展）</p></div>
+  <div class="canvas-cell"><h4>2. 价值主张</h4><p>「AI 时代的第一只宠物伙伴」——不是又一个机器人班，是让孩子亲手创造有生命的 AI 伙伴的 5 天体验。</p></div>
+  <div class="canvas-cell"><h4>3. 渠道</h4><p>发现：KOL 教育博主、清华校友网络<br>评价：往期纪录片、家长朋友圈传播<br>购买：公众号/小程序直接报名<br>持续：专属社区+月度更新</p></div>
+  <div class="canvas-cell"><h4>4. 客户关系</h4><p>启蒙营：5 天深度沉浸<br>结营后：月更线上内容+社群<br>进阶：竞赛营+助教体系<br>高价值客户：1 对 1 顾问</p></div>
+  <div class="canvas-cell"><h4>5. 收入来源</h4><p>① 启蒙营 ¥29,800/人（80%毛利）<br>② 进阶营 ¥19,800/人<br>③ 竞赛营 ¥25,000/人<br>④ 社群年费 ¥800/年<br>⑤ 硬件升级包 ¥2,000+</p></div>
+  <div class="canvas-cell"><h4>6. 核心资源</h4><p>课程 IP（独家 5 天 SOP）<br>定制固件（专属动作库+AI人格）<br>Petoi 教育渠道合作<br>清华品牌背书</p></div>
+  <div class="canvas-cell"><h4>7. 关键活动</h4><p>课程研发与迭代<br>营地运营执行<br>家长社群运营<br>品牌内容生产（纪录片）</p></div>
+  <div class="canvas-cell"><h4>8. 关键伙伴</h4><p>Petoi（硬件供应+独家教育合作）<br>清华科创平台<br>KOL 教育博主<br>专业纪录片团队</p></div>
+  <div class="canvas-cell"><h4>9. 成本结构</h4><p>固定：团队薪资<br>可变：Bittle 硬件(¥1,900/台)<br>师资(¥3,000/天/人)<br>场地+物料+纪录片</p></div>
+</div>
+
+<h3>4.2 单位经济模型（单期·30人）</h3>
+<table>
+  <tr><th>项目</th><th>金额</th><th>占比</th></tr>
+  <tr><td>营收（30人 × ¥29,800）</td><td class="green">¥894,000</td><td>100%</td></tr>
+  <tr><td>硬件（30 × ¥1,900）</td><td class="red">-¥57,000</td><td>6.4%</td></tr>
+  <tr><td>师资（3位 × 5天 × ¥3,000）</td><td class="red">-¥45,000</td><td>5.0%</td></tr>
+  <tr><td>场地（5天 × ¥6,000）</td><td class="red">-¥30,000</td><td>3.4%</td></tr>
+  <tr><td>餐饮/物料/保险</td><td class="red">-¥15,000</td><td>1.7%</td></tr>
+  <tr><td>API/云服务</td><td class="red">-¥5,000</td><td>0.6%</td></tr>
+  <tr><td>纪录片摄制</td><td class="red">-¥30,000</td><td>3.4%</td></tr>
+  <tr style="background:#fef9e7"><td><strong>毛利</strong></td><td class="green"><strong>¥712,000</strong></td><td><strong>79.6%</strong></td></tr>
+  <tr><td>营销获客</td><td class="red">-¥50,000</td><td>5.6%</td></tr>
+  <tr style="background:#fef9e7"><td><strong>净利润</strong></td><td class="green"><strong>¥662,000</strong></td><td><strong>74.1%</strong></td></tr>
+</table>
+
+<h3>4.3 三年财务规划</h3>
+<table>
+  <tr><th>年份</th><th>城市</th><th>期数</th><th>学员</th><th>营收</th><th>关键里程碑</th></tr>
+  <tr><td>Year 1</td><td>北京</td><td>4期×2班</td><td>240</td><td class="green">~¥400万</td><td>品牌验证、NPS>70、SOP成熟</td></tr>
+  <tr><td>Year 2</td><td>+上海+深圳</td><td>8期×2班</td><td>480</td><td class="green">~¥1,200万</td><td>多城市复制、线上课、竞赛体系</td></tr>
+  <tr><td>Year 3</td><td>+新一线+海外</td><td>12期+授权</td><td>1,000+</td><td class="green">~¥3,000万</td><td>品牌授权、赛事独立运营</td></tr>
+</table>
+
+<!-- ═══ 五、竞争 ═══ -->
+<h2>五、竞争分析</h2>
+
+<h3>5.1 7 Powers 护城河扫描</h3>
+<table>
+  <tr><th>Power</th><th>当前状态</th><th>建设路径</th></tr>
+  <tr><td><strong>Counter-Positioning</strong><br><small>反定位</small></td><td class="green">✅ 强</td><td>「AI 伙伴」vs「机器人培训班」——对手无法跟，因为跟了就是承认自己「没有 AI」。这是最强的初创公司护城河。</td></tr>
+  <tr><td><strong>Branding</strong><br><small>品牌</small></td><td class="green">✅ 建设窗口</td><td>品类尚无品牌占据。「赛博伙伴」有机会成为「AI 启蒙」品类的代名词。每期纪录片的品牌资产积累。</td></tr>
+  <tr><td><strong>Switching Costs</strong><br><small>转换成本</small></td><td>⚠️ 中期建设</td><td>通过专属固件、AI 人格模型、社群绑定增加转换成本。孩子不会愿意换一只「不是自己做的」狗。</td></tr>
+  <tr><td><strong>Cornered Resource</strong><br><small>独占资源</small></td><td>⚠️ 建设中</td><td>与 Petoi 教育渠道独家合作。清华品牌背书。课程 IP 的知识产权。</td></tr>
+  <tr><td><strong>Process Power</strong><br><small>流程优势</small></td><td>⚠️ 长期</td><td>多期运营积累的 SOP、师资培训体系、家长社群运营经验。需要时间和规模来沉淀。</td></tr>
+  <tr><td><strong>Network Effects</strong><br><small>网络效应</small></td><td>❌ 不适用</td><td>教育行业通常不适用。但「助教→导师」体系有微弱的双边网络效应。</td></tr>
+  <tr><td><strong>Scale Economies</strong><br><small>规模经济</small></td><td>⚠️ 有限</td><td>线下教育规模经济有限。线上内容和品牌授权是突破规模限制的杠杆。</td></tr>
+</table>
+
+<h3>5.2 竞品格局</h3>
+<table>
+  <tr><th>竞品类型</th><th>代表</th><th>价格</th><th>竞争关系</th></tr>
+  <tr><td>机器人竞赛营</td><td>VEX/各类白名单赛事营</td><td>¥8K-1.2万</td><td>不同赛道——VEX 为竞赛结果，我们为人机关系启蒙</td></tr>
+  <tr><td>STEAM 入门营</td><td>乐高/鲸鱼/编程猫</td><td>¥3K-8K</td><td>不构成直接竞争——客群、价格带、价值主张完全不同</td></tr>
+  <tr><td>国际学校夏令营</td><td>ISB/鼎石等</td><td>¥2万-5万</td><td>最接近的竞对——争夺家长暑期预算，但品类完全不同</td></tr>
+  <tr><td>DIY（家长自己买 Bittle）</td><td>淘宝+B站教程</td><td>¥1,900</td><td>不是竞对——购买行为证明了需求。家长自己做不到「5 天体验+社群」</td></tr>
+</table>
+
+<!-- ═══ 六、市场进入 ═══ -->
+<h2>六、市场进入策略</h2>
+
+<h3>6.1 三阶段路线图</h3>
+<div class="timeline">
+  <div class="timeline-item">
+    <h4>Phase 1：品牌验证（Year 1，北京）</h4>
+    <p>4 期营地 × 60 人/期 = 240 学员。首期以清华校友子女 + KOL 种子用户内测。打磨 SOP，积累首批家长口碑和纪录片资产。核心指标：单期满员率 > 80%，NPS > 70。</p>
+  </div>
+  <div class="timeline-item">
+    <h4>Phase 2：城市复制（Year 2，上海+深圳）</h4>
+    <p>标准化运营手册 + 培训本地师资。线上进阶课上线。建立竞赛体系和白名单赛事对接。核心指标：跨城市复制成功率，学员进阶转化 > 25%。</p>
+  </div>
+  <div class="timeline-item">
+    <h4>Phase 3：品牌杠杆（Year 3+）</h4>
+    <p>品牌授权模式（类似 Mad Science 或 Camp Galileo）扩展新一线城市。赛事独立运营。海外华人社区（硅谷、新加坡）拓展。核心指标：授权收入占比，品牌 NPS 维持。</p>
+  </div>
+</div>
+
+<h3>6.2 获客策略</h3>
+<table>
+  <tr><th>渠道</th><th>方法</th><th>预期 CAC</th></tr>
+  <tr><td>清华校友网络</td><td>清华 MBA/EE/CS 社群内部推广，校友子女优惠</td><td class="green">极低</td></tr>
+  <tr><td>KOL 合作</td><td>教育类/科技类博主的孩子体验内容（「XX 的儿子做了一只 AI 狗」）</td><td>¥2,000-5,000/学员</td></tr>
+  <tr><td>往期家长裂变</td><td>纪录片本身就是最强的获客物料——「别人家的孩子」效应</td><td class="green">趋近于零</td></tr>
+  <tr><td>国际学校合作</td><td>与北京国际学校合作推荐，课外项目渠道</td><td>分成模式</td></tr>
+</table>
+
+<!-- ═══ 七、团队 ═══ -->
+<h2>七、团队</h2>
+
+<div class="two-col">
+  <div style="border:1px solid #e5e7ec;border-radius:8px;padding:1.2rem">
+    <h4 style="font-size:.78rem;margin:0 0 .3rem">创始人 & CEO</h4>
+    <p style="font-size:.76rem;margin:0;color:var(--text3);font-style:italic">（待补充）</p>
+  </div>
+  <div style="border:1px solid #e5e7ec;border-radius:8px;padding:1.2rem">
+    <h4 style="font-size:.78rem;margin:0 0 .3rem">联合创始人 & COO</h4>
+    <p style="font-size:.76rem;margin:0;color:var(--text3);font-style:italic">（待补充）</p>
+  </div>
+</div>
+
+<!-- ═══ 八、财务 ═══ -->
+<h2>八、财务预测与融资</h2>
+
+<h3>8.1 融资用途</h3>
+<table>
+  <tr><th>用途</th><th>金额</th><th>占比</th></tr>
+  <tr><td>团队建设（运营+助教×4期）</td><td>¥60万</td><td>30%</td></tr>
+  <tr><td>硬件库存（100台Bittle+备件+扩展模块）</td><td>¥50万</td><td>25%</td></tr>
+  <tr><td>场地与运营（前4期营地）</td><td>¥40万</td><td>20%</td></tr>
+  <tr><td>品牌建设（官网+纪录片+KOL+社群冷启动）</td><td>¥30万</td><td>15%</td></tr>
+  <tr><td>产品研发（定制固件+AI人格+线上平台MVP）</td><td>¥20万</td><td>10%</td></tr>
+</table>
+
+<h3>8.2 A 轮触发条件</h3>
+<div class="callout">
+  <strong>🎯 A 轮：</strong>完成北京市场验证，单期满员率 > 80%，NPS > 70，学员进阶转化 > 25%。届时寻求 ¥800万-1,200万 A 轮，估值 ¥4,000万-6,000万（5x Year 1 营收）。
+</div>
+
+<!-- ═══ 九、风险 ═══ -->
+<h2>九、风险因素</h2>
+<table>
+  <tr><th>风险</th><th>概率</th><th>影响</th><th>缓释措施</th></tr>
+  <tr><td>TAM 天花板有限</td><td>高</td><td>中</td><td>高客单 × 高LTV 补偿市场容量。不做「更大」，做「更深」。</td></tr>
+  <tr><td>Bittle 供应链中断</td><td>低</td><td>高</td><td>年度框架协议+安全库存50台。备选平台已做技术评估。</td></tr>
+  <tr><td>竞品快速跟进</td><td>中</td><td>高</td><td>品牌先行优势+课程IP+社区锁定。速度是关键——第一年必须建立心智。</td></tr>
+  <tr><td>营地执行事故</td><td>低</td><td>高</td><td>完整安全SOP+全天候保险+医护在场。前两期内测打磨。</td></tr>
+  <tr><td>AI 深度被质疑</td><td>中</td><td>低</td><td>坦诚定位「AI启蒙」。「10岁孩子亲手创造AI交互」本身就是稀缺体验。</td></tr>
+</table>
+
+<hr class="rule">
+<div class="end">
+  <p><strong>「赛博伙伴 CyberPal」</strong></p>
+  <p style="color:var(--text3)">商业计划书 · BP 3.0 · 清华科创杯 · 2026年6月</p>
+  <p style="margin-top:1rem;font-style:italic">每个孩子的童年，都值得拥有一个 AI 伙伴——赛博伙伴 CyberPal。</p>
+</div>
+
+</body>
+</html>
